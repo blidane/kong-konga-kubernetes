@@ -31,15 +31,15 @@ tls:
 
 env:
   database: postgres
-  pg_host: '192.168.x.y'
+  pg_host: '12.34.56.78'
   pg_port: '5432'
-  pg_user: 'ganti.user.untuk.akses.database.postgresql.disini'
+  pg_user: 'wkongdbuserk8s'
   pg_password:
     valueFrom:
          secretKeyRef:
-            key: user.untuk.akses.database.postgresql.disini
+            key: wkongdbuserk8s
             name: postgres
-  pg_database: 'ganti.nama.database.postgresql.disini'
+  pg_database: 'wkongdk8s'
 
 resources:
   requests:
