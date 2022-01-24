@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: blidane-konga
+  name: blidane-konga
+  namespace: kong
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blidane-konga
+  template:
+    metadata:
+      labels:
+        app: blidane-konga
+    spec:
+      containers:
+      - image: pantsel/konga:0.14.9
+        name: konga
+        ports:
+        - containerPort: 1337
+        env:
+        - name: TOKEN_SECRET
+          value: 'w9f7nw9g8e0wda'
+        - name: DB_ADAPTER
+          value: postgres
+        - name: DB_URI
+          value: 'postgresql://wkongadbuserk8s:R4ha51iaD0n9!KONGA@12.34.56.78:5432/wkongadbk8s'
+        - name: NODE_ENV
+          value: 'production'
