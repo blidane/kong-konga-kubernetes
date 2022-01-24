@@ -1,9 +1,9 @@
 # kong-konga-external-postgresql-kubernetes
-Kubernetes: Kong, Konga, External PostgreSQL database
+Manual ini memuat instalasi KONG PI gateway dan KONGA sebagai web management, sedangkan database di SUMSIKAN telah memiliki server database PostgreSQL terpisah yang sudah SIAP, sehingga tinggal membuat database berserta aksesnya, seperti berikut:
 
 
 ```
-IP/Hostname	: 12.34.56.78
+IP server PostgreSQL: 12.34.56.78
 Port		: 5432
 Username	: wkongdbuserk8s
 Password	: R4ha51iaD0n9!KONG
@@ -14,7 +14,7 @@ create user wkongdbuserk8s with encrypted password 'R4ha51iaD0n9!KONG';
 grant all privileges on database wkongdk8s to wkongdbuserk8s;
 
 
-IP/Hostname	: 12.34.56.78
+IP server PostgreSQL: 12.34.56.78
 Port		: 5432
 Username	: wkongadbuserk8s
 Password	: R4ha51iaD0n9!KONGA
