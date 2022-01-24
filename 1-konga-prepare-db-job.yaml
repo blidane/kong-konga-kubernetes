@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: konga-prepare-db
+  namespace: kong
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: konga-prepare-db
+          image: pantsel/konga:0.14.9
+          args:
+            - -c
+            - prepare
+            - -a
+            - postgres
+            - -u
+            - postgresql://wkongadbuserk8s:R4ha51iaD0n9!KONGA@12.34.56.78:5432/wkongadbk8s
+  backoffLimit: 4
