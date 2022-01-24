@@ -1,0 +1,50 @@
+replicaCount: 2
+
+ingressController:
+  enabled: false
+  installCRDs: false
+
+proxy:
+  enabled: true
+  type: NodePort
+  ingress:
+    enabled: false
+    hostname: 'kong.apps.k3s'
+    path: /
+
+admin:
+  enabled: true
+  http:
+    enabled: true
+
+http:
+  enabled: true
+  servicePort: 80
+  containerPort: 8000
+
+tls:
+  enabled: true
+  servicePort: 443
+  containerPort: 8443
+  parameters:
+  - http2
+
+env:
+  database: postgres
+  pg_host: '192.168.x.y'
+  pg_port: '5432'
+  pg_user: 'ganti.user.untuk.akses.database.postgresql.disini'
+  pg_password:
+    valueFrom:
+         secretKeyRef:
+            key: user.untuk.akses.database.postgresql.disini
+            name: postgres
+  pg_database: 'ganti.nama.database.postgresql.disini'
+
+resources:
+  requests:
+    cpu: 128m
+    memory: 128Mi
+  limits:
+    cpu: 512m
+    memory: 512Mi
