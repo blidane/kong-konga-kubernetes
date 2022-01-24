@@ -1,5 +1,5 @@
 # kong-konga-external-postgresql-kubernetes
-Manual ini memuat instalasi KONG PI gateway dan KONGA sebagai web management, sedangkan database di SUMSIKAN telah memiliki server database PostgreSQL terpisah yang sudah SIAP, sehingga tinggal membuat database berserta aksesnya, seperti berikut:
+Manual ini memuat instalasi KONG PI gateway dan KONGA sebagai web management, sedangkan database di ASUMSIKAN telah memiliki server database PostgreSQL terpisah yang sudah SIAP, sehingga tinggal membuat database berserta aksesnya, seperti berikut:
 
 
 ```
@@ -26,7 +26,7 @@ grant all privileges on database wkongadbk8s to wkongadbuserk8s;
 ```
 
 ## Install kong & konga
-Asumsi server kubernetes suadh siap pakai
+Asumsi server kubernetes sudah siap pakai, pada tutorial ini menggunakan k3s dan menggunakan script installer k3sup (baca: kecap) agar instalasi kubernetes hanya beberapa detiks
 
 ```
 1. Install Helm versi 3
